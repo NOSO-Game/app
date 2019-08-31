@@ -2,6 +2,7 @@
     --primary: #92d050;
     --secondary: #00b050;
     --secondaryTranslucent: rgba(0, 176, 80, 0.7);
+    --card: rgba(255, 255, 255, 0.8);
 }
 
 @font-face {
@@ -22,8 +23,33 @@ body {
     background-size: auto 100vh;
 }
 
-h1 {
+h1, h1 * {
     font-family: "VCR OSD Mono", monospace, sans-serif;
+}
+
+div.card h1 {
+    margin-top: 0;
+}
+
+div.card {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: var(--card);
+}
+
+input {
+    margin: 8px;
+    padding: 8px;
+    background-color: white;
+    border: 2px solid #c7c7c7;
+}
+
+button {
+    margin: 8px;
+    padding: 8px;
+    background-color: var(--secondary);
+    color: white;
+    border: 2px solid var(--secondary);
 }
 
 header {
@@ -71,4 +97,32 @@ footer a {
 
 footer a.selected {
     font-weight: 700;
+}
+
+.center {
+    text-align: center;
+}
+
+.desktop {
+    display: unset;
+}
+
+.mobile {
+    display: none;
+}
+
+.notSignedIn {
+    display: none;
+}
+
+.signedIn {
+    display: none;
+}
+
+#signIn {
+    display: none;
+}
+
+#signUp {
+    display: none;
 }
