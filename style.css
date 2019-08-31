@@ -1,0 +1,75 @@
+:root {
+    --primary: #92d050;
+    --secondary: #00b050;
+    --secondaryTranslucent: rgba(0, 176, 80, 0.7);
+}
+
+@font-face {
+    font-family: "VCR OSD Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("VCR OSD Mono"), url("media/Font.ttf") format("ttf"), url("media/Font.woff2") format("woff2");
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: url("media/Background.png"), var(--primary);
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+}
+
+h1 {
+    font-family: "VCR OSD Mono", monospace, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--secondaryTranslucent);                                                                                                                                                                                                                                                                                 ;
+    text-align: center;
+}
+
+header img {
+    height: 40px;
+}
+
+main {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - 16px);
+    height: 28px;
+    padding: 8px;
+    background-color: var(--secondary);
+    text-align: center;
+    font-size: 26px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+footer a {
+    margin-left: 4px;
+    margin-right: 4px;
+    color: black;
+    text-decoration: none;
+    font-family: "VCR OSD Mono", monospace, sans-serif;
+}
+
+footer a.selected {
+    font-weight: 700;
+}
