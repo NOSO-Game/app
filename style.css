@@ -169,7 +169,7 @@ footer a.selected {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
 }
 
 #lens {
@@ -186,8 +186,8 @@ footer a.selected {
 }
 
 #qrCode img {
+    position: relative;
+    left: calc(50vw - 75px - 12px);
     height: 150px;
-    margin-left: auto;
-    margin-right: auto;
     border: 5px solid white;
 }
