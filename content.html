@@ -32,10 +32,21 @@
             <img src="media/Noso.png" />
         </header>
         <main>
-            <div class="card center">
-                <h1>Thanks for scanning!</h1>
-                <p>The content is:</p>
-                <p class="scanContent">Loading...</p>
+            <div class="card center scanTrail">
+                <h1>Coming soon!</h1>
+                <p>Sorry, the trail feature is coming soon.</p>
+            </div>
+            <div class="card center scanMembership">
+                <h1>Here's your NOSO™ membership!</h1>
+                <p>Your membership details are:</p>
+                <strong>
+                    <p class="scanContent">Loading...</p>
+                </strong>
+            </div>
+            <div class="card center scanError">
+                <h1>Oops!</h1>
+                <p>It appears that the code you scanned is not an official NOSO™ code.</p>
+                <button onclick="window.location.href = 'scanner.html';">Scan Again</button>
             </div>
         </main>
         <footer>

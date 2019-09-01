@@ -137,6 +137,22 @@ footer a.selected {
     display: none;
 }
 
+.scanTrail {
+    display: none;
+}
+
+.scanMembership {
+    display: none;
+}
+
+.scanError {
+    display: none;
+}
+
+.scanContent {
+    white-space: pre-wrap;
+}
+
 #signIn {
     display: none;
 }

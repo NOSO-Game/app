@@ -8,7 +8,7 @@ $(function() {
             $("#lens").css("background-color", "rgba(255, 255, 255, 0.4)");
 
             setTimeout(function() {
-                window.location.href = "content.html?data=" + encodeURIComponent(content);
+                window.location.href = "content.html?scanData=" + encodeURIComponent(content);
             }, 500);
         }, 500);
     });

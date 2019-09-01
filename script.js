@@ -15,7 +15,27 @@ $(function() {
         }
     });
 
-    if (getURLParameter("data") != null) {
-        $(".scanContent").text(getURLParameter("data"));
+    if (getURLParameter("scanData") != null) {
+        var data = getURLParameter("scanData");
+
+        if (data.startsWith("noso:trail,")) {
+            // Trail
+
+            $(".scanTrail").show();
+        } else if (
+            data.split("\n").length == 3 &&
+            (
+                /.*\nPurchased: \d\d\.\d\d\.\d\d\nCard Expires: \d\d\.\d\d\.\d\d/g.test(data) ||
+                /.*\nPurchased: \d\d\.\d\d\.\d\d\nExpiry: \d\d\.\d\d\.\d\d/g.test(data)
+            )
+        ) {
+            // Membership
+
+            $(".scanContent").text(data);
+
+            $(".scanMembership").show();
+        } else {
+            $(".scanError").show();
+        }
     }
 });
