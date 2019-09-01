@@ -1,5 +1,27 @@
+var saveMembershipData = "";
+
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
+}
+
+function saveMembership() {
+    $("#saveMembershipButton").attr("disabled", "true");
+
+    firebase.database().ref("users/" + currentUid + "/membership").set(saveMembershipData).then(function() {
+        window.location.href = "index.html";
+    }).error(function() {
+        alert("Sorry, an error occured! Please try again later.");
+    });
+}
+
+function deleteMembership() {
+    $("#deleteMembershipButton").attr("disabled", "true");
+
+    firebase.database().ref("users/" + currentUid + "/membership").set(null).then(function() {
+        window.location.href = "index.html";
+    }).error(function() {
+        alert("Sorry, an error occured! Please try again later.");
+    });
 }
 
 $(function() {
@@ -10,6 +32,18 @@ $(function() {
 
                 if (membership == null) {
                     $(".membershipAlert").show();
+                    $(".membershipInfo").hide();
+                } else {
+                    try {
+                        var qrCode = new QRCode("qrCode");
+
+                        qrCode.makeCode(membership);
+                    } catch {}                
+                
+                    $(".membershipContent").text(membership);
+
+                    $(".membershipAlert").hide();
+                    $(".membershipInfo").show();
                 }
             });
         }
@@ -36,6 +70,8 @@ $(function() {
             $(".scanContent").text(data);
 
             qrCode.makeCode(data);
+
+            saveMembershipData = data;
 
             $(".scanMembership").show();
         } else {

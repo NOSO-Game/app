@@ -33,29 +33,13 @@
             <img src="media/Noso.png" />
         </header>
         <main>
-            <div class="card center" id="signIn">
-                <h1>Sign into your NOSO™ account</h1>
-                <p>Not signed up yet? You're missing out! Enter your details and then press Sign Up.</p>
-                <form>
-                    <input type="email" placeholder="Email" id="user"></input><br>
-                    <input type="password" placeholder="Password" id="pass"></input>
-                </form><br><button class="secondary" onclick="signOutBefore();">Sign Up</button><button onclick="signIn();">Sign In</button><br>
-            </div>
-            <div class="card center" id="signUp">
-                <h1>Sign up for NOSO™</h1>
-                <p>You'll need to choose a great username for your NOSO™ account! Think of one and type it below.</p>
-                <form autocomplete="off">
-                    <input placeholder="Username" id="name" autocomplete="off"></input>
-                </form><br>
-                <button class="bad" onclick="reset();">Cancel</button><button onclick="signUp();">Sign Up</button><br>
-            </div>
-            <p class="notSignedIn center" id="error"></p>
-            <div class="card center signedIn">
-                <h1>Welcome, <span class="accountName">NOSO™ fan</span>!</h1>
-                <button onclick="signOut();">Sign Out</button>
+            <div class="card center notSignedIn">
+                <h1>Sign up now!</h1>
+                <p>To visit the membership section, please sign in or sign up.</p>
+                <button onclick="window.location.href = 'index.html';">Home</button>
             </div>
             <div class="signedIn">
-                <div class="card center flex membershipAlert">
+                <div class="card center membershipAlert">
                     <img src="media/QR Code.png" class="thumbnail" />
                     <div>
                         <h2>Scan your membership card now!</h2>
@@ -63,22 +47,16 @@
                         <button onclick="window.location.href = 'scanner.html';">Scan</button>
                     </div>
                 </div>
-                <div class="card center flex membershipInfo">
-                    <img src="media/QR Code.png" class="thumbnail" />
-                    <div>
-                        <h2>Your NOSO™ membership</h2>
+                <div class="membershipCode membershipInfo" id="qrCode"></div>
+                <div class="card center membershipInfo">
+                    <h1>Here's your NOSO™ membership!</h1>
+                    <p>Your membership details are:</p>
+                    <strong>
                         <p class="membershipContent">Loading...</p>
-                        <button onclick="window.location.href = 'membership.html';">More Details</button>
-                        <button onclick="window.location.href = 'scanner.html';">Renew</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card center flex">
-                <img src="media/Characters/Neeka.png" class="thumbnail" />
-                <div>
-                    <h2>View all NOSO™ characters!</h2>
-                    <p>We've got a list of all NOSO™s so you can know your NOSO™!</p>
-                    <button onclick="window.location.href = 'nosos.html';">View</button>
+                    </strong>
+                    <button onclick="window.location.href = 'index.html';">Back</button>
+                    <button onclick="window.location.href = 'scanner.html';">Renew</button>
+                    <button onclick="deleteMembership();" id="deleteMembershipButton">Delete</button>
                 </div>
             </div>
         </main>

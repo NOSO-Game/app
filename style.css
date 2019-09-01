@@ -38,7 +38,7 @@ div.card {
 }
 
 div.flex {
-    display: flex!important;
+    display: flex;
     align-items: center;
 }
 
@@ -60,6 +60,11 @@ button {
     background-color: var(--secondary);
     color: white;
     border: 2px solid var(--secondary);
+}
+
+button:disabled {
+    background-color: #7f7f7f;
+    border: 2px solid #7f7f7f;
 }
 
 img.thumbnail {
@@ -149,8 +154,12 @@ footer a.selected {
     display: none;
 }
 
-.scanContent {
+.scanContent, .membershipContent {
     white-space: pre-wrap;
+}
+
+.membershipAlert, .membershipInfo {
+    display: none;
 }
 
 #signIn {
@@ -169,7 +178,9 @@ footer a.selected {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
-    /* transform: rotateY(180deg); */
+    -moz-transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+    transform: rotateY(180deg);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
 
 #lens {
