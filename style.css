@@ -169,6 +169,7 @@ footer a.selected {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+    transform: rotateY(180deg);
 }
 
 #lens {
