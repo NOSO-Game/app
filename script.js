@@ -31,7 +31,11 @@ $(function() {
         ) {
             // Membership
 
+            var qrCode = new QRCode("qrCode");
+
             $(".scanContent").text(data);
+
+            qrCode.makeCode(data);
 
             $(".scanMembership").show();
         } else {
