@@ -86,7 +86,9 @@ function signOut() {
 
     document.getElementById("error").innerHTML = "";
 
-    firebase.auth().signOut().catch(function(error) {
+    firebase.auth().signOut().then(function() {
+        window.location.reload();
+    }).catch(function(error) {
         document.getElementById("error").innerHTML = "Oops! Something went wrong on our side. Try again soon!";
     });
 }

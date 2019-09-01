@@ -23,7 +23,7 @@ body {
     background-size: auto 100vh;
 }
 
-h1, h1 * {
+h1, h1 *, h2, h2 * {
     font-family: "VCR OSD Mono", monospace, sans-serif;
 }
 
@@ -35,6 +35,16 @@ div.card {
     margin-bottom: 8px;
     padding: 8px;
     background-color: var(--card);
+}
+
+div.flex {
+    display: flex!important;
+    align-items: center;
+}
+
+div.flex > div {
+    width: 100%;
+    padding-left: 10px;
 }
 
 input {
@@ -50,6 +60,14 @@ button {
     background-color: var(--secondary);
     color: white;
     border: 2px solid var(--secondary);
+}
+
+img.thumbnail {
+    width: 100px;
+}
+
+video {
+    background-color: black;
 }
 
 header {
@@ -125,4 +143,23 @@ footer a.selected {
 
 #signUp {
     display: none;
+}
+
+#scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#lens {
+    position: absolute;
+    top: calc(calc(100vh - 33.3vw) / 2);
+    left: calc(calc(100vw - 33.3vw) / 2);
+    width: 33.3vw;
+    height: 33.3vw;
+    background-color: rgba(255, 255, 255, 0.4);
 }
