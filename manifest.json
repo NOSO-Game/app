@@ -1,8 +1,8 @@
 {
   "name": "NOSO™ Official App",
   "short_name": "NOSO™",
-  "theme_color": "#92d050",
-  "background_color": "#92d050",
+  "theme_color": "#a6bfff",
+  "background_color": "#a6bfff",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/app/",
