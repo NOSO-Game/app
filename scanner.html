@@ -3,6 +3,8 @@
     <head>
         <title>NOSO™ App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="icons/icon-512x512.png">
         <link rel="manifest" href="manifest.json">
         <link rel="shortcut icon" href="media/Icon.png">
         <link href="https://fonts.googleapis.com/css?family=Roboto|Material+Icons&display=swap" rel="stylesheet">
@@ -34,7 +36,7 @@
             <img src="media/Noso.png" />
         </header>
         <main>
-            <video id="scanner"></video>
+            <video playsinline="true" id="scanner"></video>
             <div id="lens"></div>
         </main>
         <footer>

@@ -38,7 +38,7 @@ $(function() {
                         var qrCode = new QRCode("qrCode");
 
                         qrCode.makeCode(membership);
-                    } catch {}                
+                    } catch (e) {if (getURLParameter("debug") == "true") {alert(e);}}                
                 
                     $(".membershipContent").text(membership);
 
@@ -78,4 +78,13 @@ $(function() {
             $(".scanError").show();
         }
     }
+
+    try {
+        $("#scanner").attr("playsinline", "true");
+        $("#scanner").attr("controls", "true");
+
+        setTimeout(function() {
+            $("#scanner").removeAttr("controls");
+        });
+    } catch (e) {if (getURLParameter("debug") == "true") {alert(e);}}
 });
