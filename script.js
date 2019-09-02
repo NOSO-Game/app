@@ -55,7 +55,23 @@ $(function() {
         if (data.startsWith("noso:trail,")) {
             // Trail
 
+            try {
+            var trailNumber = data.split(",")[1].trim();
+            var trailText = "";
+
+            if (trailNumber == "1") {
+                trailText = "Welcome to the NOSO™CON™ official trail! To continue, go to trail 2.";
+            } else {
+                trailText = "Hmm, this trail number seems incorrect. Please try another trail number!";
+            }
+
+            $(".trailNumber").text(trailNumber);
+            $(".trailText").text(trailText);
+
             $(".scanTrail").show();
+            } catch {
+                $(".scanError").show();
+            }
         } else if (
             data.split("\n").length == 3 &&
             (
